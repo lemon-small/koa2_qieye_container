@@ -1,0 +1,31 @@
+language: node_js   # node环境设置
+
+install: npm install # 安装阶段，如果失败，构建失败
+
+before_script: 
+  	npm run dev # 执行脚本前的hook
+
+script: npm run mocha # 执行相关的脚本
+
+os:
+- linux
+- osx
+
+node_js:         # 需要构建的nodejs版本
+- "8"
+- "7"
+- "6"
+
+branches:       # 触发push构建的分支
+	only:
+- master
+
+notification:    # 构建结果通知
+	email: 2385322293@qq.com
+
+after_success:
+	tar -zcvf dist.tar.gz  ./dist
+	scp dist.tar.gz root@182.61.48.179:/home/koa/
+	ssh root@182.61.48.179:/home/koa/ 'mkdir -p dist && tar -zxvf dist.bar.gz -C dist'
+	ssh root@182.61.48.179:/home/koa/ 'cd dist && supervisor local_app.js'
+

@@ -1,0 +1,109 @@
+{% extends 'default.html' %}
+{% block title %} {{title}} {% endblock%}
+{% block links %}
+<link rel="stylesheet" href="/styles/bootstrap.css" />
+<link rel="stylesheet" href="/styles/site.css" />
+{% endblock%}
+{% block content %}
+<div class="wrap">
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/basic/web/index.php">My Application</a>
+            </div>
+            <div id="w1-collapse" class="collapse navbar-collapse">
+                <ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/basic/web/index.php?r=site%2Findex">Home</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Fabout">About</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Fcontact">Contact</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Flogin">Login</a></li></ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/basic/web/index.php">Home</a></li>
+            <li>Books</li>
+            <li></li>
+            <li class="active">Update</li>
+        </ul>
+
+        <div class="book-update">
+            <h1> update {{title}} </h1>
+            <div class="book-form">
+                <form id="w0">
+                    {% 
+                        for value in bookData
+                    %}
+                        <div class="form-group field-book-book_id">
+                            <label class="control-label" for="{{loop.key}}">{{ loop.key }}</label>
+                            <input type="text" id="{{loop.key}}" class="form-control" name="{{loop.key}}" value="{{value}}" maxlength="20" />
+                        </div>
+                    {%
+                        endfor
+                    %}
+                    <div class="form-group">
+                        <!-- <button type="submit" class="btn btn-success" id="save">Save</button> -->
+                        <input type="button" class="btn btn-success" id="save" value="Save" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 
+    <ul>
+        {% 
+            for item in list
+        %}
+        <li>{{ item.book_name }} => {{ item.author }}</li>
+        {%
+            endfor
+        %}
+    </ul> -->
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            const jump = (path) => {
+                location.href = path; 
+            };
+
+            const request = (cb, fail) => {
+                $.ajax({
+                    url: '',
+                    data: '',
+                    success: (res) => {
+                        cb(res);
+                    },
+                    error: (err) => {
+                        fail(err);
+                    }
+                });
+            };
+
+            $('#save').click((e) => {
+                const curr = e.currentTarget;
+                const id = id;
+                const req = {
+                    url: '',
+                    data: {
+                        id: id
+                    }
+                }
+                request(req, (res) => {
+                    
+                }, (err) => {
+
+                });
+            });
+        });
+    </script>
+{% endblock %}

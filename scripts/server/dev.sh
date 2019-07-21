@@ -1,0 +1,1 @@
+cross-env NODE_ENV=dev gulp && nodemon ./dist/local_app.js

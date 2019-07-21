@@ -1,0 +1,1 @@
+webpack --NODE_ENV prod --modules nomodule

@@ -1,0 +1,126 @@
+{% extends 'default.html' %}
+{% block title %} {{title}} {% endblock%}
+{% block links %}
+<link rel="stylesheet" href="/styles/bootstrap.css" />
+<link rel="stylesheet" href="/styles/site.css" />
+{% endblock%}
+{% block content %}
+<div class="wrap">
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/basic/web/index.php">My Application</a>
+            </div>
+            <div id="w1-collapse" class="collapse navbar-collapse">
+                <ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/basic/web/index.php?r=site%2Findex">Home</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Fabout">About</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Fcontact">Contact</a></li>
+                <li><a href="/basic/web/index.php?r=site%2Flogin">Login</a></li></ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/basic/web/index.php">Home</a></li>
+            <li>Books</li>
+            <li class="active"></li>
+        </ul>
+
+        <div class="book-view">
+            <h1> {{title}} </h1>
+            <!-- <p>
+                <a class="btn btn-success" href="/basic/web/index.php?r=book%2Fcreate">Create Book</a>    
+            </p> -->
+            <p>
+                <a class="btn btn-primary" id="update" data-id="{{id}}">Update</a>
+                <a class="btn btn-danger" id="delete">Delete</a> 
+            </p>
+            <table id="w0" class="table table-striped table-bordered detail-view">
+                <tbody id="tbody">
+                    {% 
+                        for value in bookData
+                    %}
+                        <tr>
+                            <th>{{ loop.key }}</th>
+                            <td>{{ value }}</td>
+                        </tr>
+                    {%
+                        endfor
+                    %}
+                    <!-- book_id | book_name | author | publisher | publish_date | price  | sum -->
+                    <!-- <tr data-key="111">
+                        <td>1</td><td>111</td><td>aasssss</td><td>aa</td><td>aaa</td><td>2000-11-12</td><td><a href="/basic/web/index.php?r=book%2Fview&amp;id=111" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a href="/basic/web/index.php?r=book%2Fupdate&amp;id=111" title="Update" aria-label="Update" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/basic/web/index.php?r=book%2Fdelete&amp;id=111" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    <tr data-key="1233">
+                        <td>2</td><td>1233</td><td>三国演义</td><td>罗贯中</td><td>中国人民出版社</td><td>1980-01-03</td><td><a href="/basic/web/index.php?r=book%2Fview&amp;id=1233" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a href="/basic/web/index.php?r=book%2Fupdate&amp;id=1233" title="Update" aria-label="Update" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/basic/web/index.php?r=book%2Fdelete&amp;id=1233" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                    <tr data-key="124">
+                        <td>3</td><td>124</td><td>西游记</td><td>吴承恩</td><td>清华大学出版社</td><td>1970-06-12</td><td><a href="/basic/web/index.php?r=book%2Fview&amp;id=124" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a href="/basic/web/index.php?r=book%2Fupdate&amp;id=124" title="Update" aria-label="Update" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/basic/web/index.php?r=book%2Fdelete&amp;id=124" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 
+    <ul>
+        {% 
+            for item in list
+        %}
+        <li>{{ item.book_name }} => {{ item.author }}</li>
+        {%
+            endfor
+        %}
+    </ul> -->
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            const jump = (path) => {
+                location.href = path; 
+            };
+
+            const request = (cb, fail) => {
+                $.ajax({
+                    url: '',
+                    data: '',
+                    success: (res) => {
+                        cb(res);
+                    },
+                    error: (err) => {
+                        fail(err);
+                    }
+                });
+            };
+
+            $('#update').click((e) => {
+                const curr = e.currentTarget;
+                const id = curr.attributes['data-id'].value;;
+                jump('/update/' + id);
+            });
+
+            $('#delete').click((e) => {
+                const curr = e.currentTarget;
+                const id = id;
+                const req = {
+                    url: '',
+                    data: {
+                        id: id
+                    }
+                }
+                request(req, (res) => {
+                    
+                }, (err) => {
+
+                });
+            });
+        });
+    </script>
+{% endblock %}

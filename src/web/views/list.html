@@ -1,0 +1,27 @@
+{% extends 'default.html' %}
+{% block title %} {{title}} {% endblock%}
+{% block links %}
+<!--injectcss-->
+{% endblock %}
+{% block content %}
+<div class="wrap">
+    {% include '@components/nav.html' %}
+    <div class="container">
+        {% include '@components/list/index.html' %}
+    </div>
+    <p>i am list</p>
+    <div class="pjax-list-content">
+        i am list block !!! LOVE YOU
+    </div>
+</div>
+{% endblock %}
+{% block lib %}
+    <script src="@internal/assets/scripts/x-tag/polyfills/custom-elements.min.js"></script>
+    <script src="@internal/assets/scripts/x-tag/src/core.js"></script>
+    <script src="@internal/assets/scripts/jquery.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
+{% block scripts %}
+<!--injectjs-->
+<!--injectjses5-->
+{% endblock %}

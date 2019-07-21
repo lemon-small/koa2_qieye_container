@@ -1,0 +1,85 @@
+[2019-06-16T12:56:05.545] [ERROR] cheese - ReferenceError: ctxy is not defined
+    at actionIndex (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/controllers/IndexController.js:17:24)
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:198:12)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:138:21
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-compose@4.1.0@koa-compose/index.js:42:32)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-body@4.1.0@koa-body/index.js:141:14
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-06-16T13:00:04.052] [ERROR] cheese - ReferenceError: ctxy is not defined
+    at actionIndex (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/controllers/IndexController.js:18:24)
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:198:12)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:138:21
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-compose@4.1.0@koa-compose/index.js:42:32)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-body@4.1.0@koa-body/index.js:141:14
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-06-16T13:09:27.603] [ERROR] cheese - ReferenceError: ctxy is not defined
+    at actionIndex (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/controllers/IndexController.js:18:25)
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:198:12)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:138:21
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-compose@4.1.0@koa-compose/index.js:42:32)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-body@4.1.0@koa-body/index.js:141:14
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-06-16T13:12:37.627] [ERROR] cheese - ReferenceError: ctxy is not defined
+    at actionIndex (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/controllers/IndexController.js:17:25)
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:198:12)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:138:21
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-compose@4.1.0@koa-compose/index.js:42:32)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-body@4.1.0@koa-body/index.js:141:14
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-06-16T13:22:35.335] [ERROR] cheese - ReferenceError: ctxy is not defined
+    at actionIndex (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/controllers/IndexController.js:17:25)
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:198:12)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-simple-router@0.2.0@koa-simple-router/index.js:138:21
+    at dispatch (/Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-compose@4.1.0@koa-compose/index.js:42:32)
+    at /Users/jonathan/Desktop/yii2koa2/yii2koa_4/node_modules/_koa-body@4.1.0@koa-body/index.js:141:14
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-06-22T16:56:53.689] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:02:54.609] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:05:19.099] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:05:20.672] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:05:20.920] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:05:29.421] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:05:41.901] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
+[2019-06-22T17:06:23.026] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/jonathan/Desktop/0621/notebook/koa2/src/server/web/views/index.html' }
