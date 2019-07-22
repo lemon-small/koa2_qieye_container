@@ -1,10 +1,9 @@
 import axios from 'axios';
-import serverPath from '../configs/urls.js';
 /**
  * @fileoverview 实现book数据模型
  * @author lemon
  */
-class Request {
+class BooksService {
     /**
      * Books类
      * @class
@@ -13,8 +12,7 @@ class Request {
      * @constructor
      * @param {string} url KOA2执行上下文
      */
-    constructor (url) {
-        this.reqUrl = serverPath.basicDir + url;
+    constructor () {
     }
     /**
      * 获取后台全部图书列表
@@ -25,9 +23,8 @@ class Request {
      * return new Promise 返回值
      */
     fetch (data) {
-        // console.log(this.reqUrl);
-        // console.log(data);
-        return axios.get(this.reqUrl, {
+        const reqUrl = 'http://192.168.64.2/basic/web/index.php?r=book/index';
+        return axios.get(reqUrl, {
             data
         }).then(function(response){
             // console.info(response);
@@ -68,4 +65,4 @@ class Request {
         // });
     }
 }
-export default Request;
+export default BooksService;

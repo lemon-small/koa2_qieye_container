@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('unhandledrejection', function (e){ // 捕获promise的reject或者throw错误，可以取消红
+            e.preventDefault();
+            console.log(e.reason);
+            return true;
+        });
+        // Promise.reject("xxxx");
+
+        // new Promise(function (resolve, reject) {
+        //     resolve(123);
+        // }).then(() => {
+        //     throw "错误";
+        // });
+    </script>
+</body>
+</html>

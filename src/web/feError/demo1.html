@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        error; // 会爆红
+        console.log(1);
+    </script>
+    <script>
+        console.log(2);
+    </script>
+    <!-- script之间报错了互相不影响执行 -->
+    <script>
+        /*
+        0、注意异常错误捕获避免爆红，爆红就会告警, 注意语法错误无法被方法捕获会直接中断程序（在开发时通过jslint/htmlint/csslint解决）
+        1、try catch捕获意料之中的错误和同步错误
+        2、window.onerror捕获意料之外的错误，如异步，（返回true异常才会向上抛出不爆红）
+        3、资源加载报错捕获，addEventListener但是取消不了红
+        4、捕获promise的reject或者throw错误，可以取消
+        */
+    </script>
+</body>
+</html>

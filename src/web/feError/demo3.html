@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(() => { // 异步错误
+        //     error
+        // });
+        console.log(error); // 同步错误
+        window.onerror = function (msg, url, row, col, error) { // window.onerror可以捕获异步错误, 也可以捕获同步的
+            console.log('我已经捕获到错误');
+            console.log(msg, url, row, col, error);
+            return true; // 返回true这里不爆红, 否则爆红
+        };
+    </script>
+</body>
+</html>

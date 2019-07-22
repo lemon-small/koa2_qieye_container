@@ -16,15 +16,15 @@ var entry = './src/server/**/*.js';
 var buildDev = function () { // 这个就是gulp.task
     return watch(entry, {ignoreInitial: false}, function () {
         gulp.src(entry)
-        .pipe(rollup({
-            input: './src/server/local_app.js', // 执行rollup的入口文件
-            format: 'umd', // 或cjs
-            plugins: [
-                replace({ // 清洗变量
-                    'process.env.NODE_ENV': JSON.stringify(env)
-                })
-            ]
-        }))
+        // .pipe(rollup({
+        //     input: './src/server/local_app.js', // 执行rollup的入口文件
+        //     format: 'umd', // 或cjs
+        //     plugins: [
+        //         replace({ // 清洗变量
+        //             'process.env.NODE_ENV': JSON.stringify(env)
+        //         })
+        //     ]
+        // }))
         // es6转es5
         .pipe(babel({
             babelrc: false,
@@ -37,6 +37,7 @@ var buildDev = function () { // 这个就是gulp.task
                 ]
             ],
             "plugins": [ // 以下是自己引的插件，以下可以直接使用新的：@babel/plugin-transform-modules-commonjs
+                ["@babel/plugin-proposal-decorators", {"legacy": true}],
                 "@babel/plugin-transform-runtime",
                 "@babel/plugin-transform-arrow-functions"
             ]
@@ -67,6 +68,7 @@ var buildProd = function () {
             ]
         ],
         "plugins": [
+            ["@babel/plugin-proposal-decorators", {"legacy": true}],
             "@babel/plugin-transform-runtime",
             "@babel/plugin-transform-arrow-functions"
         ]
